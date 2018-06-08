@@ -3,7 +3,19 @@
  */
 let card = document.querySelectorAll('.card');
 let cards = [...card];
-console.log(cards);
+// console.log(cards);
+
+// initialize cards with only the class name of "class"
+function resetCards(array) {
+	for (let i = 0; i < array.length; i++) {
+		if (array[i].getAttribute('class') !== "card") {
+			array[i].setAttribute('class', "card");
+		}
+		console.log(array[i].className);
+	}
+}
+
+resetCards(cards);
 
 /*
  * Display the cards on the page
