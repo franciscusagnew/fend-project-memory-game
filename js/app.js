@@ -150,3 +150,9 @@ function noMatch() {
  * Increment the move counter and display it on the page
  * if all cards have matched, display a message with the final score
  */
+function addMoves() {
+    moves++;
+    moveCounter.textContent = moves;
+    rating();
+}
+ 
