@@ -40,7 +40,7 @@ restart.addEventListener('click', newGame);
 let gameOver = document.querySelector('.gameOver');
 let gameOverExit = document.querySelector('.fa-times');
 let playAgain = document.querySelector('.playAgain');
-const moveResults = document.querySelector('.moveResults');
+let moveResults = document.querySelector('.moveResults');
 let ratingResults = document.querySelector('.ratingResults');
 let timingResults = document.querySelector('.timingResults');
 
@@ -76,16 +76,36 @@ function newCards() {
         deck.appendChild(shuffleCards[i]);
     }
 
-    // Add 'click' event listener to each card
+    // set up the event listener for a card. If a card is clicked:
     for (let shuffleCard of shuffleCards) {
         shuffleCard.addEventListener('click', selectedCards);
     }
 }
 
+/*
+ * - display the card's symbol (put this functionality in another
+ *   function that you call from this one)
+ */
+function selectedCards() {
+    displayCard();
+    addOpenCards();
+    if (startGame === false) {
+        startTimer();
+    }
+    
+    if (openedCards.length === 2) {
+        addMoves();
+        if (openedCards[0].innerHTML === openedCards[1].innerHTML) {
+            matchCount++;
+            endGame();
+            match();
+        } else {
+            noMatch();
+        }
+    }
+}
 
 /*
- * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
  *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
