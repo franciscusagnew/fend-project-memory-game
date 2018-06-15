@@ -204,3 +204,12 @@ function startTimer() {
                             (seconds < 10 ? '0' + seconds.toString(): seconds);
     }, 1000);
 }
+
+// Reset game timer
+function resetTimer() {
+    clearInterval(interval);
+    minutes = 0;
+    seconds = 0;
+    startGame = false;
+    timer.textContent = time;
+}
