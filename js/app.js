@@ -230,3 +230,28 @@ function newGame() {
     openedCards = [];
     newCards();
 }
+
+// Game ending procedures
+function endGame() {
+    if (matchCount === 8) {
+        clearInterval(interval);
+        gameOver.style.display = "block";
+
+        game++;
+        moveResults.textContent = moves;
+        ratingResults.textContent = starRating;
+        timingResults.textContent = timer.textContent;
+
+        gameOverExit.onclick = function() {
+            gameOver.style.display = 'none';
+            saveScore();
+            newGame();
+        }
+
+        playAgain.onclick = function() {
+            gameOver.style.display = 'none';
+            saveScore();
+            newGame();
+        };
+    }
+}
