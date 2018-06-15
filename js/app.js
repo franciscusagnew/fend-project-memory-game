@@ -174,3 +174,27 @@ function rating() {
         stars[1].style.visibility = 'hidden';
     }
 }
+
+// Start timer function
+function startTimer() {
+    startGame = true;
+    clearInterval(interval);
+    timer.textContent = time;
+
+    interval = setInterval(function() {
+        seconds++;
+
+        if (seconds === 60) {
+            minutes++;
+            seconds = 0;
+
+            if (minutes === 60) {
+                minutes = 0;
+                seconds = 0;
+            }
+        }
+
+        timer.textContent = (minutes < 10 ? '0' + minutes.toString(): minutes) + ':' + 
+                            (seconds < 10 ? '0' + seconds.toString(): seconds);
+    }, 1000);
+}
