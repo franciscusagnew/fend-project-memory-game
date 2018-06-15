@@ -1,21 +1,48 @@
 /*
+ * Game Play Components
+ *
  * Create a list that holds all of your cards
  */
 let card = document.querySelectorAll('.card');
 let cards = [...card];
-// console.log(cards);
 
-// initialize cards with only the class name of "class"
-function resetCards(array) {
-	for (let i = 0; i < array.length; i++) {
-		if (array[i].getAttribute('class') !== "card") {
-			array[i].setAttribute('class', "card");
-		}
-		console.log(array[i].className);
-	}
-}
+// Game Deck
+let deck = document.querySelector('.deck');
 
-resetCards(cards);
+// List of Open Cards
+let openedCards = [];
+
+// Counter For Number of Moves
+let moveCounter = document.querySelector('.moves');
+
+// Counter For NUmber of Matched Cards
+let matchCount = 0;
+
+// Player's Star Rating
+let starRating = 0;
+
+// Game Count
+let game = 0;
+
+/*
+ * Game Play Components
+ */
+let time = '00:00';
+let timer = document.querySelector('.timer');
+let seconds = 0;
+let minutes = 0;
+let interval;
+
+// Game Status Components
+let startGame = false;
+let restart = document.querySelector('.restart');
+restart.addEventListener('click', newGame);
+let gameOver = document.querySelector('.gameOver');
+let gameOverExit = document.querySelector('.fa-times');
+let playAgain = document.querySelector('.playAgain');
+const moveResults = document.querySelector('.moveResults');
+let ratingResults = document.querySelector('.ratingResults');
+let timingResults = document.querySelector('.timingResults');
 
 /*
  * Display the cards on the page
