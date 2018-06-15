@@ -16,17 +16,17 @@
         </header>
 
         <section class="score-panel">
-        	<ul class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        	</ul>
+            <ul class="stars">
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+                <li><i class="fa fa-star"></i></li>
+            </ul>
 
-        	<span class="moves">3</span> Moves
+            <span class="moves">3</span> Moves
 
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
-        	</div>
+                <i class="fa fa-repeat"></i>
+            </div>
         </section>
 
         <ul class="deck">
@@ -79,6 +79,27 @@
                 <i class="fa fa-cube"></i>
             </li>
         </ul>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="gameOver">
+        <!-- Modal Content -->
+        <div class="content">
+            <!-- Modal Exit Button -->
+            <span class="fa fa-times fa-5x"></span>
+
+            <span class="fa fa-trophy fa-5x"></span>
+            <h2 class="congrat">Congratulations You Won!</h2>
+            <p>You completed the game in <span class="moveResults"></span> moves and <span class="ratingResults"></span> stars!</p>
+            <p>Total Time: <span class="timingResults"></span></p>
+            
+            <!-- Leaderboard -->
+            <div class="leaderboard">
+                <p class="fa fa-users fa-2x"> Leaderboard:</p>
+                <ul class="leaders"></ul>
+            </div>
+            <button class="playAgain">Play Again?</button>
+        </div>
     </div>
 
     <script src="js/app.js"></script>
