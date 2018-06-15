@@ -181,6 +181,12 @@ function rating() {
     }
 }
 
+// Reset the star rating
+function resetStarRating() {
+    stars[1].style.visibility = 'visible';
+    stars[0].style.visibility = 'visible';
+}
+
 // Start timer function
 function startTimer() {
     startGame = true;
