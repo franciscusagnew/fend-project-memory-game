@@ -255,3 +255,15 @@ function endGame() {
         };
     }
 }
+
+// Save player scores
+function saveScore() {
+    localStorage.setItem('game', game);
+    localStorage.setItem('moves', moves);
+    localStorage.setItem('starRating', starRating);
+    localStorage.setItem('timer', timer.textContent);
+
+    let leaders = document.querySelector('.leaders');
+    let addScores = '<li><strong>Game ' + game + ":&emsp;Time:</strong> " + timer.textContent + '&emsp;<strong>Moves:</strong> ' + moves + '&emsp;<strong>Star Rating:</strong> ' + starRating + '</li>';
+    leaders.insertAdjacentHTML('beforeend', addScores);
+}
