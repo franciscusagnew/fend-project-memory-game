@@ -159,6 +159,12 @@ function addMoves() {
     rating();
 }
 
+// Reset player's number of moves
+function resetMovesCount() {
+    moves = 0;
+    moveCounter.textContent = moves;
+}
+
 // Calculate the player's star rating
 function rating() {
     if (moves < 15) {
