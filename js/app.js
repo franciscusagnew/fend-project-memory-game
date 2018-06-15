@@ -18,6 +18,9 @@ let moveCounter = document.querySelector('.moves');
 // Counter For NUmber of Matched Cards
 let matchCount = 0;
 
+// Star Rating display component
+let stars = document.querySelector('.stars').children;
+
 // Player's Star Rating
 let starRating = 0;
 
@@ -155,4 +158,19 @@ function addMoves() {
     moveCounter.textContent = moves;
     rating();
 }
- 
+
+// Calculate the player's star rating
+function rating() {
+    if (moves < 15) {
+        starRating = 3;
+    }
+    if (moves > 15) {
+        starRating = 2;
+        stars[0].style.visibility = 'hidden';
+        
+    }
+    if (moves > 25) {
+        starRating = 1;
+        stars[1].style.visibility = 'hidden';
+    }
+}
