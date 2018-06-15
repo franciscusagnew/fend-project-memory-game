@@ -110,6 +110,16 @@ function addOpenCards() {
     openedCards.push(event.target);
 }
 
+/* display the card's symbol */
+function displayCard() {
+    const selectedCard = event.target;
+    if (selectedCard.className === 'card') {
+        if (openedCards.length < 2) {
+            event.target.classList.add('open', 'show');
+        }
+    }
+}
+
 /*
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
