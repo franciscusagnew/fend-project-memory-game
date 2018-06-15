@@ -83,8 +83,8 @@ function newCards() {
 }
 
 /*
- * - display the card's symbol (put this functionality in another
- *   function that you call from this one)
+ * Display the card's symbol (put this functionality in another
+ * function that you call from this one)
  */
 function selectedCards() {
     displayCard();
@@ -105,12 +105,12 @@ function selectedCards() {
     }
 }
 
-/* add the card to a *list* of "open" cards */
+// add the card to a *list* of "open" cards
 function addOpenCards() {
     openedCards.push(event.target);
 }
 
-/* display the card's symbol */
+// display the card's symbol
 function displayCard() {
     const selectedCard = event.target;
     if (selectedCard.className === 'card') {
@@ -132,11 +132,21 @@ function match() {
     openedCards = [];
 }
 
+/* 
+ * If the cards do not match, remove the cards from the list and hide
+ * the card's symbol
+ */
+function noMatch() {
+    openedCards[0].classList.add('nomatch');
+    openedCards[1].classList.add('nomatch');
+    setTimeout(function() {
+        openedCards[0].classList.remove('open', 'show', 'nomatch');
+        openedCards[1].classList.remove('open', 'show', 'nomatch');
+        openedCards = [];
+    }, 1000);
+}
+
 /*
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+ * Increment the move counter and display it on the page
+ * if all cards have matched, display a message with the final score
  */
