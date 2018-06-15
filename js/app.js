@@ -66,6 +66,22 @@ function shuffle(array) {
     return array;
 }
 
+// newCards function re-shuffles the deck of cards
+function newCards() {
+    let shuffleCards = shuffle(cards);
+
+    // Remove classes from card before adding to deck
+    for (let i = 0; i < shuffleCards.length; i++) {
+        shuffleCards[i].classList.remove('show', 'open', 'match');
+        deck.appendChild(shuffleCards[i]);
+    }
+
+    // Add 'click' event listener to each card
+    for (let shuffleCard of shuffleCards) {
+        shuffleCard.addEventListener('click', selectedCards);
+    }
+}
+
 
 /*
  * set up the event listener for a card. If a card is clicked:
