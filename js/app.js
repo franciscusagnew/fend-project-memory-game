@@ -219,3 +219,14 @@ function resetTimer() {
     startGame = false;
     timer.textContent = time;
 }
+
+// Setup a new game
+function newGame() {
+    resetMovesCount();
+    resetStarRating();
+    matchCount = 0;
+    startGame = false;
+    resetTimer();
+    openedCards = [];
+    newCards();
+}
