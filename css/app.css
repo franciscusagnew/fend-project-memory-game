@@ -114,6 +114,13 @@ h1 {
 }
 
 .score-panel .restart {
-    float: right;
+    display: inline-block;
     cursor: pointer;
+    margin-left: 40px;
+    margin-right: 30px;
+}
+
+.score-panel .timer {
+    display: inline-block;
+    margin-left: 2px;
 }
