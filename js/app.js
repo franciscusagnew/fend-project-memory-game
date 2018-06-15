@@ -267,3 +267,8 @@ function saveScore() {
     let addScores = '<li><strong>Game ' + game + ":&emsp;Time:</strong> " + timer.textContent + '&emsp;<strong>Moves:</strong> ' + moves + '&emsp;<strong>Star Rating:</strong> ' + starRating + '</li>';
     leaders.insertAdjacentHTML('beforeend', addScores);
 }
+
+// Start a new game when browser loads
+window.onload = function() {
+    newGame();
+};
