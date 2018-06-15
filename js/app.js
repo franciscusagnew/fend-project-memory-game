@@ -25,7 +25,7 @@ let starRating = 0;
 let game = 0;
 
 /*
- * Game Play Components
+ * Game Timer Components
  */
 let time = '00:00';
 let timer = document.querySelector('.timer');
