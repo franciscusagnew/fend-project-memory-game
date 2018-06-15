@@ -105,6 +105,11 @@ function selectedCards() {
     }
 }
 
+/* add the card to a *list* of "open" cards */
+function addOpenCards() {
+    openedCards.push(event.target);
+}
+
 /*
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
