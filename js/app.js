@@ -121,6 +121,18 @@ function displayCard() {
 }
 
 /*
+ * If the list already has another card, check to see if the two cards match.
+ * If the cards do match, lock the cards in the open position
+ */
+function match() {
+    openedCards[0].classList.add('match');
+    openedCards[1].classList.add('match');
+    openedCards[0].classList.remove('show', 'open');
+    openedCards[1].classList.remove('show', 'open');
+    openedCards = [];
+}
+
+/*
  *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
  *  - if the list already has another card, check to see if the two cards match
  *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
