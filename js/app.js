@@ -40,12 +40,12 @@ let interval;
 let startGame = false;
 let restart = document.querySelector('.restart');
 restart.addEventListener('click', newGame);
-let gameOver = document.querySelector('.gameOver');
+let gameOver = document.querySelector('.game-over');
 let gameOverExit = document.querySelector('.fa-times');
-let playAgain = document.querySelector('.playAgain');
-let moveResults = document.querySelector('.moveResults');
-let ratingResults = document.querySelector('.ratingResults');
-let timingResults = document.querySelector('.timingResults');
+let playAgain = document.querySelector('.play-again');
+let moveResults = document.querySelector('.move-results');
+let ratingResults = document.querySelector('.rating-results');
+let timingResults = document.querySelector('.timing-results');
 
 /*
  * Display the cards on the page
@@ -235,7 +235,7 @@ function newGame() {
 function endGame() {
     if (matchCount === 8) {
         clearInterval(interval);
-        gameOver.style.display = "block";
+        gameOver.style.display = 'block';
 
         game++;
         moveResults.textContent = moves;
@@ -260,11 +260,11 @@ function endGame() {
 function saveScore() {
     localStorage.setItem('game', game);
     localStorage.setItem('moves', moves);
-    localStorage.setItem('starRating', starRating);
+    localStorage.setItem('star-rating', starRating);
     localStorage.setItem('timer', timer.textContent);
 
     let leaders = document.querySelector('.leaders');
-    let addScores = '<li><strong>Game ' + game + ":&emsp;Time:</strong> " + timer.textContent + '&emsp;<strong>Moves:</strong> ' + moves + '&emsp;<strong>Star Rating:</strong> ' + starRating + '</li>';
+    let addScores = '<li><strong>Game ' + game + ':&emsp;Time:</strong> ' + timer.textContent + '&emsp;<strong>Moves:</strong> ' + moves + '&emsp;<strong>Star Rating:</strong> ' + starRating + '</li>';
     leaders.insertAdjacentHTML('beforeend', addScores);
 }
 

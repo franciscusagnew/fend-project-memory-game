@@ -17,8 +17,8 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    background: #ffffff url(../img/geometry2.png); /* Background pattern from Subtle Patterns */
+    font-family: "Coda", cursive;
 }
 
 .container {
@@ -29,13 +29,12 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 300;
 }
 
-/*
- * Styles for the deck of cards
- */
+
+/* Styles for the deck of cards */
 .deck {
     width: 660px;
     min-height: 680px;
@@ -90,9 +89,8 @@ h1 {
     animation: shake 0.8s ease-in-out both;
 }
 
-/*
- * Styles for the Score Panel
- */
+
+/* Styles for the Score Panel */
 .score-panel {
     font-size: 1.2em;
     text-align: left;
@@ -124,10 +122,9 @@ h1 {
     margin-left: 2px;
 }
 
-/*
- * Styles for the Game Over Modal
- */
-.gameOver {
+
+/* Styles for the Game Over Modal */
+.game-over {
     display: none;
     position: fixed;
     text-align: center;
@@ -140,7 +137,7 @@ h1 {
     margin: auto;
     /* Fallback background color */
     background-color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, .75);
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 .content {
@@ -168,7 +165,7 @@ h1 {
 
 .fa-trophy {
     color: rgb(0, 128, 0);
-    border: 2px solid rgba(0, 128, 0, .2);
+    border: 2px solid rgba(0, 128, 0, 0.2);
     border-radius: 100%;
     padding: 40px;
 }
@@ -181,13 +178,13 @@ h1 {
 .leaderboard {
     color: #0f0;
     background-color: rgb(0, 0, 0);
-    border: 2px solid rgba(0, 128, 0, .2);
+    border: 2px solid rgba(0, 128, 0, 0.2);
     margin: 30px auto;
 }
 
 .fa-users {
     color: #0f0;
-    border-bottom: 2px solid rgba(0, 128, 0, .2);
+    border-bottom: 2px solid rgba(0, 128, 0, 0.2);
     padding: 20px;
 }
 
@@ -195,7 +192,7 @@ h1 {
     list-style: none;
 }
 
-.playAgain {
+.play-again {
     background-color: #fff;
     color: rgba(0, 128, 0, 1);
     font-size: 1em;
@@ -205,8 +202,8 @@ h1 {
     border: none;
 }
 
-.playAgain:hover,
-.playAgain:focus {
+.play-again:hover,
+.play-again:focus {
     background-color: rgb(0, 128, 0);
     color: #fff;
     font-size: 1em;
@@ -215,13 +212,12 @@ h1 {
     border: none;
 }
 
-/*
- * Styles for the Game Card Animations
- */
+
+/* Styles for the Game Card Animations */
 @keyframes rotate-scale-up {
   0% {
-    -webkit-transform: scale(.5) rotateZ(0);
-            transform: scale(.5) rotateZ(0);
+    -webkit-transform: scale(0.5) rotateZ(0);
+            transform: scale(0.5) rotateZ(0);
   }
   
   50% {
