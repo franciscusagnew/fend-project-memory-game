@@ -96,6 +96,7 @@ h1 {
  */
 
 .score-panel {
+    font-size: 1.2em;
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
